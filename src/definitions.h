@@ -1,6 +1,7 @@
 /* GB Cart Reader Microcontroller Firmware
  * Copyright (C) 2005–2007 Kraku & Chroost (gbflasher@interia.pl)
  * Copyright (C) 2015 Tauwasser (tauwasser@tauwasser.eu)
+ * Copyright (C) 2020 S-I-M-O-N (S-I-M-O-N@gmx.li)
  * 
  * This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 
  * International License.
@@ -29,7 +30,7 @@
 /**
  * Firmware Major Version.
  */
-#define FW_VER_MAJ "02"
+#define FW_VER_MAJ "10"
 /**
  * Firmware Minor Version.
  */

@@ -1114,7 +1114,7 @@ const uint8_t wait_packet(const uint8_t packet_ix, const uint8_t bank_hi, const 
 
 						ix_fail_counter++;
 
-						if (10 <= ix_fail_counter) {
+						if (100 <= ix_fail_counter) {
 
 							write_usart(END);
 							return true;
@@ -1135,7 +1135,7 @@ const uint8_t wait_packet(const uint8_t packet_ix, const uint8_t bank_hi, const 
 
 				crc_fail_counter++;
 
-				if (10 <= crc_fail_counter) {
+				if (100 <= crc_fail_counter) {
 
 					write_usart(END);
 					return true;
@@ -1678,8 +1678,9 @@ int main(void)
 
 	} else {
 
-		UBRRL = 0x01;
-
+	//	UBRRL = 0x01;
+		UBRRL = 0x03;
+	
 	}
 
 	DDRE = 0x00u;
@@ -1691,6 +1692,8 @@ int main(void)
 	ACSR = (1u << ACD);
 	UCSRB = (1u << RXCIE | 1u << RXEN | 1u << TXEN);
 	sei();
+
+	PORTD &= ~(1u<< PD2); // assert /RED_LED for reboot detection
 
 	while (1)
 	{
